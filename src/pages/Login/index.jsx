@@ -25,9 +25,21 @@ export default function Login() {
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
-  const submit = () => {
+
+  const submit = async () => {
     let flag = validate()
+    if(flag) {
+      let req = await http.get('/ll_activity/gift_game/index.php',{
+        login_Key: 'test-flamingo-login-key-abc',
+        uin: 6097, //   绑定手机的 4478 4391 4366  没绑 330  ~335
+        productID: 136, //66 136 果盘109
+        platformType: 102,
+        uuid: 'abc',
+        version: '5.8.0'
+      })
+    }
   }
+
   const validate = () => {
     if(name == '') {
       Toast.show('用户名不能为空')
@@ -48,14 +60,7 @@ export default function Login() {
     return true
   }
   useEffect(() => {
-    http.get('/ll_activity/gift_game/index.php',{
-      login_Key: 'test-flamingo-login-key-abc',
-      uin: 6097, //   绑定手机的 4478 4391 4366  没绑 330  ~335
-      productID: 136, //66 136 果盘109
-      platformType: 102,
-      uuid: 'abc',
-      version: '5.8.0'
-    })
+    
   },[])
   return (
     <div className={styles.login_container}>

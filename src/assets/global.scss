@@ -19,6 +19,7 @@ body {
   -webkit-touch-callout: none; /* 禁用长按链接弹出菜单（仅适用于 iOS Safari） */
   -webkit-user-select: none; /* 禁用文本选择（仅适用于 iOS Safari） */
   user-select: none; /* 禁用文本选择（标准语法） */
+  font-size: 12px;
 }
 #root {
   height: 100%;

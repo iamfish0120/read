@@ -1,18 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import pxtovw from 'postcss-px-to-viewport'
+import postCssPxToRem from 'postcss-pxtorem'
 import path from 'path'
 
 // https://vitejs.dev/config/
-const usePxtovw = pxtovw({
-  viewportWidth: 375,
-  viewportUnit: 'vw'
+const usePxtovw = postCssPxToRem({
+  rootValue:100,
+  propList:['*'],
 })
 export default defineConfig({
   plugins: [react()],
   css: {
     postcss: {
-      plugins: [usePxtovw]
+      plugins: [usePxtovw],
+      
     }
   },
   resolve: {
