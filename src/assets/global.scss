@@ -1,0 +1,25 @@
+*,*::before,*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* 控制文本选择时的高亮颜色 */
+}
+*:focus {
+  outline: none;
+}
+*:focus-visible {
+  outline: none;
+}
+html {
+  height: 100%;
+}
+body {
+  max-width: 768PX;
+  margin: 0 auto;
+  height: 100%;
+  line-height: 1.1;
+  -webkit-touch-callout: none; /* 禁用长按链接弹出菜单（仅适用于 iOS Safari） */
+  -webkit-user-select: none; /* 禁用文本选择（仅适用于 iOS Safari） */
+  user-select: none; /* 禁用文本选择（标准语法） */
+}
+#root {
+  height: 100%;
+}
