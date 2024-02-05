@@ -1,9 +1,10 @@
 import { lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter,Navigate  } from 'react-router-dom'
 import { beforeEnter } from './guard'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Login = lazy(() => import('@/pages/Login'))
+const Layout = lazy(() => import('@/pages/Layout'))
 const routes = [
   {
     path: '/login',
@@ -13,9 +14,20 @@ const routes = [
   },
   {
     path: '/',
-    element: <Home />,
+    element: <Layout />,
     loader: beforeEnter,
     errorElement: <></>,
+    children: [
+      {
+        path: '/',
+        element: <Navigate to="/home" />,
+      },
+      {
+        path: '/Home',
+        element: <Home />,
+        loader: beforeEnter,
+      }
+    ]
   },
 
 ]

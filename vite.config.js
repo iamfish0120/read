@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import pxtovw from 'postcss-px-to-viewport'
 import postCssPxToRem from 'postcss-pxtorem'
 import path from 'path'
 

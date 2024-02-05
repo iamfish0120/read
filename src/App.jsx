@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import LoadingStatus from '@/store/LoadingStatus';
 import router from '@/router'
@@ -10,6 +10,9 @@ Toast.config({
 });
 export const AppContext = createContext()
 function App() {
+  useEffect(() => {
+
+  },[])
   return (
     <>
       <AppContext.Provider value={LoadingStatus}>
